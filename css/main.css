@@ -1,0 +1,273 @@
+html {
+   font-size: 62.5%;
+}
+
+body {
+   margin: 0;
+   font-family: "poppins";
+}
+
+.wrapper {
+   max-width: 1200px;
+   margin: 0 auto;
+
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+nav {
+   margin: 4em;
+}
+
+nav ul {
+   list-style-type: none;
+   display: flex;
+   gap: 3.6em;
+   margin: 0;
+}
+
+nav a {
+   text-decoration: none;
+   color: black;
+   font-size: 1.6rem;
+   position: relative;
+}
+
+nav a.active:before {
+   position: absolute;
+   content: "";
+   width: 35%;
+   height: 1px;
+   border-bottom: 2px solid black;
+   bottom: -2px;
+}
+
+nav a::before{
+   position: absolute;
+   content: "";
+   width: 0;
+   height: 1px;
+   border-bottom: 2px solid grey;
+   bottom: -2px;
+   transition: width .3s; 
+}
+
+
+/* hero section */
+main{
+   display: flex; 
+   gap: 8em;
+   margin-top: 11em;  
+}
+
+.leftCol {
+   width: 45%;
+
+}
+ .rightCol {
+   flex-grow: 1;
+ }
+
+ h1{
+   font-size: 5.2rem;
+   font-family: "playfair Display";
+   font-weight: normal;
+   margin: 0;
+}
+
+.subHead{
+   font-size: 1.8rem;
+}
+
+.ctaBtns {
+   display: flex;
+   gap: 2em;
+   margin: 5em 0;
+}
+
+.primaryCta{
+   background-color: #F1E2D1 ;
+   font-size: 1.8rem;
+   font-weight: bold;
+   color: black;
+   text-decoration: none;
+   border-radius: 1.9em;
+   padding: 1em 2em;
+}
+
+.secondaryCta{
+   font-size: 1.8rem;
+   text-decoration: none;
+   color: black;
+   /* display: block; */
+   gap: 2em;
+   padding: 1em 0;
+}
+
+.secondaryCta svg{
+   width: 20px;
+   transition: transform .3s;
+}
+
+.news{
+   display: flex;
+   gap: 3em;
+   padding: 5em;
+   border: 1px solid black;
+   border-radius: .8em;
+   position: relative;
+}
+
+.news::before{
+   position: absolute;
+   content: "";
+   background: url("/images/confetti.svg");   /* background: url("/EXP/images/confetti.svg") */
+   width: 100px;
+   height: 100px;
+   top: -20px;
+   left: -20px;
+   z-index: 2;
+}
+
+ .employees{
+   font-size: 3.3rem;
+   margin: 0;
+   font-weight: 200;
+   line-height: 100%;
+ }
+
+ .details {
+   font-size: 1.4rem;
+   margin: 0;
+ }
+
+ .rightCol{
+   display: grid;
+   gap: 2.3em;
+   grid-template-columns:  repeat(2,auto);
+   grid-template-areas: 
+   "left right"
+   "left bottom";
+ }
+
+ .card {
+   border-radius: .8em;
+   padding: 1.1em;
+   display: flex;
+   align-items: end;
+   background-size: 100%;
+   transition: background-size 800ms;
+
+ }
+
+.card1 {
+   grid-area: left;
+   background-image: url("/images/shoes.png") ;
+   position: relative;
+}
+
+.card1::before {
+   position: absolute;
+   content: "";
+   background: url("/images/tag.svg") no-repeat;
+   width: 100%;
+   height: 100%;
+   top: 20px;
+   left: -30px;
+   pointer-events: none;
+}
+.card2 {
+   background-image: url("/images/jean\ shirt.png") ;
+}
+.card3 {
+   background-image: url("/images/sweater.png") ;
+}
+
+.cardDetails {
+   background: white;
+   border-radius: .6em;
+   padding: 2em;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   transition: transform 800ms;
+}
+
+.cardDetails a {
+   color: black;
+   text-decoration: none;
+   font-size: 1.6rem;
+   font-weight: bold;
+}
+
+.cardDetails p {
+   font-size: 1.4rem;
+   margin: 0;
+}
+
+
+p.productPrice {
+   font-size: 1.8rem;
+}
+
+ /* microinteraction */
+
+nav ul li a:hover::before {
+   width: 35%;
+
+}
+
+.primaryCta:hover{
+   background: #e2d1bd;
+}
+
+.secondaryCta:hover svg {
+   transform: translateX(10px);
+}
+
+.secondaryCta:hover{
+   text-decoration: underline;
+}
+
+.card:hover{
+   background-size: 110%;
+}
+
+.card:hover .cardDetails{
+   transform: translateY(-20px);
+}
+
+/* intro animation */
+.overlay{
+position: absolute;
+z-index: 999;
+background: white;
+width: 100%;
+height: 100%;
+animation: reveal 1s ease-in forwards;
+transform-origin: bottom;
+}
+
+@keyframes reveal {
+   from {
+      transform: scaleY(1);}
+      to{
+         transform: scaleY(0);
+      }
+   }
+   main{
+      animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      transform:scale(.4);
+   }
+
+   @keyframes growIn {
+      to{
+         transform: scale(1);
+      }
+   }
+
